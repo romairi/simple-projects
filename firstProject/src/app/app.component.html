@@ -1,0 +1,34 @@
+<h1>Hello World</h1>
+<h2>{{ title }}</h2>
+<app-card></app-card>
+<p>{{ howMany }}</p>
+<ul>
+  <li *ngFor="let item of myArr">{{ item }}</li>
+</ul>
+
+<ul>
+  <ul *ngFor="let person of myObjsArr">
+    <li>{{ person.fname }}</li>
+    <li>{{ person.lname }}</li>
+    <li>{{ person.bYear }}</li>
+  </ul>
+</ul>
+
+<p>{{ myMethod() + 6 }}</p>
+
+<div *ngIf="shouldShow">Hello</div>
+<div *ngIf="shouldShow">World</div>
+
+<div>
+  <ul>
+    <li>first</li>
+    <li>second</li>
+  </ul>
+  <p *ngIf="!shouldShow">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates maiores
+    unde eum fuga suscipit ut blanditiis enim. Quia, assumenda alias! Alias
+    repellat distinctio modi tempore ea ipsum, numquam doloribus. Blanditiis?
+  </p>
+</div>
+
+<div [class.rdbGround]="myVar" [class.anotherClass]="!myVar">My div</div>
