@@ -1,1 +1,10 @@
-<app-card></app-card>
+<div class="Gallery">
+  <app-card
+    *ngFor="let card of candies"
+    [candyName]="card.candyName"
+    [candyImg]="card.candyImg"
+    [candyShortDescription]="card.candyShortDescription"
+    [candyPrice]="card.candyPrice"
+  >
+  </app-card>
+</div>

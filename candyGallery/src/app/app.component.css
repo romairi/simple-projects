@@ -1,0 +1,21 @@
+.Content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.NavBar {
+    width: 100%;
+    background-color: lemonchiffon;
+}
+
+.Gallery {
+    width: 70%;
+}
+
+.SideMenu {
+    width: 30%;
+}
+
+.Footer {
+    width: 100%;
+}

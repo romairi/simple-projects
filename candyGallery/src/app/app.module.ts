@@ -7,6 +7,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { CardComponent } from './card/card.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CardComponent } from './card/card.component';
     NavBarComponent,
     SideMenuComponent,
     GalleryComponent,
-    CardComponent
+    CardComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
