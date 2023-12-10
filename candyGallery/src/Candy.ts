@@ -1,6 +1,6 @@
 export interface Candy {
-    candyName: string,
-    candyImg: string,
-    candyShortDescription: string,
-    candyPrice: number
+    candyName: string;
+    theimg: string;
+    CandyShortDescription: string;
+    candyPrice: number;
 }

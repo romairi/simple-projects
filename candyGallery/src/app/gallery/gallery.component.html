@@ -1,3 +1,14 @@
 <div class="Gallery">
-  <app-card *ngFor="let card of candies" [candyInfo]="card"> </app-card>
+    <!-- <app-card [candyName]="candies[0].candyName" [theimg]="candies[0].theimg"
+        [CandyShortDescription]="candies[0].CandyShortDescription" [candyPrice]="candies[0].candyPrice"></app-card>
+
+    <app-card [candyName]="candies[1].candyName" [theimg]="candies[1].theimg"
+        [CandyShortDescription]="candies[1].CandyShortDescription" [candyPrice]="candies[1].candyPrice"></app-card> -->
+
+
+    <!-- <app-card *ngFor="let curr of candies" [candyName]="curr.candyName" [theimg]="curr.theimg"
+        [CandyShortDescription]="curr.CandyShortDescription" [candyPrice]="curr.candyPrice"></app-card> -->
+
+    <app-card *ngFor="let moshe of candies" [candyInfo]="moshe"></app-card>
+
 </div>

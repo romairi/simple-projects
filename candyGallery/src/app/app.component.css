@@ -1,21 +1,12 @@
-.Content {
+.middleContent {
     display: flex;
     justify-content: space-between;
 }
 
-.NavBar {
-    width: 100%;
-    background-color: lemonchiffon;
+.appSideMenu {
+    width: 10%;
 }
 
-.Gallery {
-    width: 70%;
-}
-
-.SideMenu {
-    width: 30%;
-}
-
-.Footer {
-    width: 100%;
+.appGallery {
+    width: 90%;
 }

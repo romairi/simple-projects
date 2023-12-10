@@ -4,17 +4,18 @@ import { Candy } from 'src/Candy';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css'],
+  styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  // @Input() candyName = 'Candy Name';
-  // @Input() candyImg = 'https://t4.ftcdn.net/jpg/01/35/81/99/240_F_135819993_bSNjZzDBWQwDc8nVhUXQZ3WtMEvPzz4R.jpg';
-  // @Input() candyShortDescription = 'Candy short description';
-  // @Input() candyPrice = 0;
-
+  // @Input() candyName = "candy Name";
+  // @Input() theimg = "https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlOF9pc29sYXRlZF9waG90b19vZl9hX2Nob2NvbGF0ZV9iYXJfY2xlYW5fd2hpdGVfYl9jOTBkMjU2Mi05MDJjLTQyZmItYjMxZi00MDdlZjc3M2VmMTMucG5n.png";
+  // @Input() CandyShortDescription = "Candy short description";
+  // @Input() candyPrice = 5;
   @Input() candyInfo: Candy | undefined;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
+
 }
