@@ -8,3 +8,9 @@
 .Card img {
     border-radius: 50%;
 }
+
+.emlInfo {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
