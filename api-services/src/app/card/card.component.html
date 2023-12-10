@@ -1,0 +1,5 @@
+<div class="Card" *ngIf="thePersonOfTheCard">
+  <img [src]="thePersonOfTheCard.picUrl" [alt]="thePersonOfTheCard.firstName" />
+  <h3>{{ thePersonOfTheCard.firstName }} {{ thePersonOfTheCard.lastName }}</h3>
+  <h5>{{ thePersonOfTheCard.email.substring(0, 14) }}</h5>
+</div>
