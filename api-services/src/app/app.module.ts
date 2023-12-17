@@ -8,6 +8,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { CardComponent } from './card/card.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SandwichOrderFormComponent } from './sandwich-order-form/sandwich-order-form.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     GalleryComponent,
     CardComponent,
-    SignUpComponent
+    SignUpComponent,
+    SandwichOrderFormComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,7 @@
   <div *ngIf="signUpForm.get('userName')?.hasError('minlength') && signUpForm.get('userName')?.touched">
     Username must be at least 3 characters
   </div>
-  <div *ngIf="signUpForm.get('userName')?.hasError('required')">
+  <div *ngIf="signUpForm.get('userName')?.hasError('required') && signUpForm.get('userName')?.touched">
     Username is required
   </div>
   <label for="email">Email:</label>

@@ -1,0 +1,36 @@
+<form [formGroup]="sandwichForm" (ngSubmit)="onSubmit()">
+  <span *ngFor="let item of mainItemOptionsArray">
+    <input
+      type="radio"
+      [id]="item"
+      name="mainItem"
+      [value]="item"
+      formControlName="mainItem"
+    />
+    {{ item }}
+  </span>
+</form>
+
+<!-- <form [formGroup]="sandwichForm" (ngSubmit)="onSubmit()">
+  <input
+    type="radio"
+    name="mainItem"
+    value="Cheese"
+    formControlName="mainItem"
+  />
+  Cheese
+  <input
+    type="radio"
+    name="mainItem"
+    value="Chicken Breast"
+    formControlName="mainItem"
+  />
+  Chicken Breast
+  <input
+    type="radio"
+    name="mainItem"
+    value="Pastrami"
+    formControlName="mainItem"
+  />
+  Pastrami
+</form> -->
