@@ -21,19 +21,30 @@ export class SandwichOrderFormComponent implements OnInit {
       // isPastrami: new FormControl(false),
       // isCheese: new FormControl(false),
 
-      extras: new FormArray([]),
+      // extras: new FormArray([]),
+
+      extrasTomatoes: new FormControl(false),
+      extrasOlives: new FormControl(false),
+      extrasLettuce: new FormControl(false),
+      extrasPesto: new FormControl(false),
+      extrasCucumber: new FormControl(false),
 
       email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('', [
         Validators.required,
         Validators.pattern(/^05\d{1}-\d{7}$/),
       ]),
-      fullName: new FormControl('', []),
-      address: new FormControl('', []),
+
+      fullName: new FormControl('', [
+        Validators.required,
+        Validators.minLength(8),
+      ]),
+      address: new FormControl('', [
+        Validators.required,
+        Validators.minLength(8),
+      ]),
     });
   }
 
-  onSubmit() {
-
-  }
+  onSubmit() {}
 }
