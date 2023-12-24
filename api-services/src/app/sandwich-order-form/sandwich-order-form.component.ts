@@ -17,17 +17,9 @@ export class SandwichOrderFormComponent implements OnInit {
   ngOnInit(): void {
     this.sandwichForm = new FormGroup({
       mainItem: new FormControl('', [Validators.required]),
-      // isChickenBreast: new FormControl(false),
-      // isPastrami: new FormControl(false),
-      // isCheese: new FormControl(false),
-
-      // extras: new FormArray([]),
-
-      extrasTomatoes: new FormControl(false),
-      extrasOlives: new FormControl(false),
-      extrasLettuce: new FormControl(false),
-      extrasPesto: new FormControl(false),
-      extrasCucumber: new FormControl(false),
+      isChickenBreast: new FormControl(false),
+      isPastrami: new FormControl(false),
+      isCheese: new FormControl(false),
 
       email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('', [
@@ -44,7 +36,18 @@ export class SandwichOrderFormComponent implements OnInit {
         Validators.minLength(8),
       ]),
     });
+
+    this.sandwichForm.setValue({
+      mainItem: 'Pastrami',
+      extras: ['Tomatoes', 'Olives', 'Lettuce', 'Pesto', 'Cucumber'],
+      email: 'roma@gmail.com',
+      phone: '052-3412457',
+      fullName: 'john bob',
+      address: 'hama 8, tel-aviv',
+    });
   }
 
-  onSubmit() {}
+  onSubmit() {
+    console.log(this.sandwichForm.value);
+  }
 }
