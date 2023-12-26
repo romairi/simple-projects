@@ -1,0 +1,67 @@
+<form [formGroup]="sandwichForm" (ngSubmit)="onSubmit()">
+
+    <span *ngFor="let curr of mainItemOptionsArray">
+        <input type="radio" value={{curr}} formControlName="mainItem">{{curr}}
+    </span>
+
+    <hr>
+    <!-- <div *ngFor="let curr of extrasOptionsConntrolsArr.controls;  index as i;">
+        <input type="checkbox" [formControl]="curr">{{extrasOptionsArr[i]}}
+    </div> -->
+
+
+
+
+    <span *ngFor="let curr of extrasOptionsArr">
+        <input type="checkbox" formControlName="extras{{curr}}"> {{curr}}
+    </span>
+
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" formControlName="fullName">
+        <div *ngIf="sandwichForm.get('userName')?.hasError('minlength') && sandwichForm.get('userName')?.touched">
+            Username must be at least 3 characters
+        </div>
+        <div *ngIf="sandwichForm.get('userName')?.hasError('required')  && sandwichForm.get('userName')?.touched">
+            Username is required
+        </div>
+    </div>
+
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email">
+        <div *ngIf="sandwichForm.get('email')?.hasError('email') && sandwichForm.get('email')?.touched">
+            Please enter a valid email address.
+        </div>
+        <div *ngIf="sandwichForm.get('email')?.hasError('required')  && sandwichForm.get('email')?.touched">
+            Email is required.
+        </div>
+    </div>
+
+
+    <div>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" formControlName="phone">
+        <div *ngIf="sandwichForm.get('phone')?.hasError('pattern')  && sandwichForm.get('phone')?.touched">
+            Please enter a valid phone number.
+        </div>
+        <div *ngIf="sandwichForm.get('phone')?.hasError('required')  && sandwichForm.get('phone')?.touched">
+            Phone is required.
+        </div>
+    </div>
+
+    <div>
+        <label for="addr">Address:</label>
+        <input type="text" id="addr" formControlName="address">
+        <div *ngIf="sandwichForm.get('address')?.hasError('minlength') && sandwichForm.get('address')?.touched">
+            Please enter a valid address.
+        </div>
+        <div *ngIf="sandwichForm.get('address')?.hasError('required') && sandwichForm.get('address')?.touched">
+            Address is required.
+        </div>
+    </div>
+
+
+
+    <button type="submit" [disabled]="!sandwichForm.valid">Sign Up</button>
+</form>

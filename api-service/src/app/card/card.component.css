@@ -1,0 +1,16 @@
+.Card {
+    width: 200px;
+    border: gray 2px solid;
+    padding: 10px;
+    text-align: center;
+}
+
+.Card img {
+    border-radius: 50%;
+}
+
+.emlInfo {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
