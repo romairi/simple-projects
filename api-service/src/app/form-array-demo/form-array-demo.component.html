@@ -1,0 +1,6 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <span *ngFor="let curr of arr; let i = index">
+        <input type="checkbox" [formControl]="castToFormControl(extrasControlMap[curr])" />{{curr}}
+    </span>
+    <input type="submit" value="Submit">
+</form>

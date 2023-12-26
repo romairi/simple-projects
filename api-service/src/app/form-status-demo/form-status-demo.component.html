@@ -1,0 +1,41 @@
+<form [formGroup]="myForm" (ngSubmit)="mySubmit()">
+    <input [formControl]="fullName">
+    <input [formControl]="email">
+
+    <hr>
+    <p>myForm.value {{myForm.value | json}}</p>
+    <p>myForm.status {{myForm.status}}</p>
+    <p>myForm.pristine: {{myForm.pristine}}</p>
+    <p>myForm.dirty: {{myForm.dirty}}</p>
+    <p>myForm.touched: {{myForm.touched}}</p>
+
+    <hr>
+
+    <p>fullName.status: {{fullName.status}}</p>
+    <p>fullName.value: {{fullName.value}}</p>
+    <p>fullName.pristine: {{fullName.pristine}}</p>
+    <p>fullName.dirty: {{fullName.dirty}}</p>
+    <p>fullName.touched: {{fullName.touched}}</p>
+
+
+    <hr>
+
+    <p>email.status: {{email.status}}</p>
+    <p>email.value: {{email.value}}</p>
+    <p>email.pristine: {{email.pristine}}</p>
+    <p>email.dirty: {{email.dirty}}</p>
+    <p>email.touched: {{email.touched}}</p>
+
+
+    <hr>
+    <p>myForm.errors: {{myForm.errors}}</p>
+
+    <input type="button" value="set to default values" (click)="setMyForm()">
+    <input type="button" value="erase all" (click)="resetMyForm()">
+    <input type="submit" value="submit">
+
+    <hr>
+    <input type="button" value="stop listening to form value changes" (click)="stopListeningToFormValueChanges()">
+
+
+</form>

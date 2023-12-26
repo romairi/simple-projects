@@ -9,6 +9,11 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SandwichOrderFormComponent } from './sandwich-order-form/sandwich-order-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormArrayDemoComponent } from './form-array-demo/form-array-demo.component';
+import { FormStatusDemoComponent } from './form-status-demo/form-status-demo.component';
+import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
+import { PrefixPipe } from './prefix.pipe';
+import { ConvertOrderLocalToServerFormatPipe } from './convert-order-local-to-server-format.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,12 @@ import { HttpClientModule } from '@angular/common/http';
     GalleryComponent,
     CardComponent,
     SignUpComponent,
-    SandwichOrderFormComponent
+    SandwichOrderFormComponent,
+    FormArrayDemoComponent,
+    FormStatusDemoComponent,
+    PipesDemoComponent,
+    PrefixPipe,
+    ConvertOrderLocalToServerFormatPipe
   ],
   imports: [
     BrowserModule,

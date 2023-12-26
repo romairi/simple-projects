@@ -64,4 +64,22 @@
 
 
     <button type="submit" [disabled]="!sandwichForm.valid">Sign Up</button>
+
+    <hr>
+
+    <div>{{sandwichForm.valid}}</div>
+    <hr>
+    <div>our form value is:
+        <br>
+        {{sandwichForm.value|json}}
+    </div>
+
+    <hr>
+    <div>and when using our pipe:
+        <br>
+        {{sandwichForm.value| convertOrderLocalToServerFormat|json}}
+    </div>
+
+    <hr>
+
 </form>

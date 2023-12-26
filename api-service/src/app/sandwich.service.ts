@@ -6,14 +6,16 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SandwichService {
-  private url = 'https://randomuser.me/api/?results=1';
+  private url = 'https://cyberstars.onrender.com/qa-exercises/new-customer-registers/json';
   private orderSubject = new BehaviorSubject<any>(null);
 
   constructor(private http: HttpClient) { }
 
 
   submitOrder(order: any) {
-    this.http.get(this.url, order).subscribe((response) => {
+    console.log("the order before submit", order);
+
+    this.http.post(this.url, order).subscribe((response) => {
       console.log('====================================');
       console.log(response);
       console.log('====================================');

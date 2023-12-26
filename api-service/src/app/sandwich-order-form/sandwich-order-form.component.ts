@@ -1,6 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, PipeTransform } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { SandwichService } from '../sandwich.service';
+import { OrderServerFormat } from '../../types/OrderServerFormat';
+import { ConvertOrderLocalToServerFormatPipe } from '../convert-order-local-to-server-format.pipe';
+
+
+export interface OurFormValue {
+  "mainItem": string,
+  "extrasTomatoes": boolean,
+  "extrasLettuce": boolean,
+  "extrasOlives": boolean,
+  "extrasPesto": boolean,
+  "extrasCucumbers": boolean,
+  "email": string,
+  "phone": string,
+  "fullName": string,
+  "address": string,
+}
 
 @Component({
   selector: 'app-sandwich-order-form',
@@ -14,6 +30,10 @@ export class SandwichOrderFormComponent implements OnInit {
   //extrasOptionsConntrolsArr = new FormArray<FormControl>([]);
   //extrasOptionsConntrolsArr2 = new FormArray<FormControl>([]);
   myStr = "htttps://wwww"
+  convertOrderLocalToServerFormatPipe = new ConvertOrderLocalToServerFormatPipe();
+
+
+
   constructor(private sandwichService: SandwichService) { }
 
   ngOnInit(): void {
@@ -59,9 +79,80 @@ export class SandwichOrderFormComponent implements OnInit {
   }
 
   //=========================================
+
+  convertFormDataToOrderServerFormat(
+    formValue: OurFormValue
+  ): OrderServerFormat {
+    const extras: any = {
+      tomatoes: formValue.extrasTomatoes,
+      olives: formValue.extrasOlives,
+      lettuce: formValue.extrasLettuce,
+      pesto: formValue.extrasPesto,
+      cucumbers: formValue.extrasCucumbers,
+    };
+
+    const filteredExtras = Object.keys(extras).filter((key) => extras[key]);
+
+    return {
+      mainItem: formValue.mainItem,
+
+      extras: filteredExtras,
+      customer: {
+        name: formValue.fullName,
+        email: formValue.email,
+        phone: formValue.phone,
+        address: formValue.address,
+      },
+    };
+  }
+
+
+
+  // convertFormDataToOrderServerFormat(ourFormValue: OurFormValue): OrderServerFormat {
+
+  //   const {
+  //     extrasTomatoes: tomatoes,
+  //     extrasLettuce: lettuce,
+  //     extrasOlives: olives,
+  //     extrasPesto: pesto,
+  //     extrasCucumbers: cucumbers } = ourFormValue;
+
+  //   const theChoseExtrasObj = {
+  //     tomatoes,
+  //     lettuce,
+  //     olives,
+  //     pesto,
+  //     cucumbers
+  //   }
+
+
+  //   let theChoseExtrasArr = [];
+
+  //   for (const [key, val] of Object.entries(theChoseExtrasObj)) {
+  //     if (val === true) {
+  //       theChoseExtrasArr.push(key);
+  //     }
+  //   }
+
+  //   return {
+  //     mainItem: ourFormValue.mainItem,
+  //     extras: theChoseExtrasArr,
+  //     customer: {
+  //       name: ourFormValue.fullName,
+  //       email: ourFormValue.email,
+  //       phone: ourFormValue.phone,
+  //       address: ourFormValue.address
+  //     }
+  //   }
+  // }
+
+  //=========================================
   onSubmit() {
     console.log(this.sandwichForm.value);
-    this.sandwichService.submitOrder(this.sandwichForm.value);
+    // this.sandwichService.submitOrder(this.convertFormDataToOrderServerFormat(this.sandwichForm.value));
+
+    // using our pipe
+    this.sandwichService.submitOrder(this.convertOrderLocalToServerFormatPipe.transform(this.sandwichForm.value));
   }
   //=========================================
 
