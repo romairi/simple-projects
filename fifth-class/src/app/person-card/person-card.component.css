@@ -47,10 +47,6 @@
     background-color: #004494;
   }
   
-  button:hover {
-    background-color: #004494;
-  }
-  
   button.remove-favorite:hover {
     background-color: #c9302c;
   }

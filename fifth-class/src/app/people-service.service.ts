@@ -25,11 +25,15 @@ export class PeopleService {
     });
   }
 
-  addToFavorites(uuid: string) {
+  registerToPeopleSubject() {
+    return this.peopleSubject;
+  }
+
+  addToFavorites(uuid: string): void {
     this.favorites.add(uuid);
   }
 
-  removeFromFavorites(uuid: string) {
+  removeFromFavorites(uuid: string): void {
     this.favorites.delete(uuid);
   }
 
@@ -37,7 +41,9 @@ export class PeopleService {
     return this.favorites.has(uuid);
   }
 
-  registerToPeopleSubject() {
-    return this.peopleSubject;
+  getAllFavorites() {
+    return Array.from(this.favorites)
+      .map((favorite) => this.peopleMap.get(favorite))
+      .filter((person) => person !== undefined && person !== null);
   }
 }
