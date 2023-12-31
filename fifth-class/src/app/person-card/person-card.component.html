@@ -1,5 +1,14 @@
-<!-- <div [ngClass]="{'favorite': isFavorite(person?.email)}">
-    <img [src]="person.picture.large" alt="{{person.name.first}}">
-    <p>{{person.name.first}} {{person.name.last}}</p>
-    <button (click)="addToFavorites(person.login.uuid)">Add to Favorites</button>
-  </div> -->
+<!-- person-card.component.html -->
+<div *ngIf="person" class="person-card">
+  <img [src]="person.picUrl" alt="Profile Picture" />
+  <div class="person-info">
+    <h2>{{ person.firstName }} {{ person.lastName }}</h2>
+    <p>Email: {{ person.email }}</p>
+  </div>
+  <button
+    (click)="handleClickFavoriteBtn()"
+    [ngStyle]="{ 'background-color': isFavorite ? '#d9534f' : '#0056b3' }"
+  >
+    {{ isFavorite ? "Remove" : "Add" }}
+  </button>
+</div>

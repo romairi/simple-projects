@@ -1,3 +1,6 @@
-<div *ngFor="let person of people">
-  <app-person-card [person]="person"></app-person-card>
+<div class="people-gallery">
+  <app-person-card
+    *ngFor="let person of people | keyvalue"
+    [person]="person.value"
+  ></app-person-card>
 </div>

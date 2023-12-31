@@ -13,8 +13,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.peopleService.initPeopleService();
-    this.peopleService.registerToPeopleSubject().subscribe((people) => {
-      people.forEach((curr) => console.log(curr));
-    });
+   
   }
 }
