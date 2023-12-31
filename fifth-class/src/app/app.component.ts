@@ -69,4 +69,48 @@ export class AppComponent {
       console.log(`Employee ${key}: ${value}`);
     });
   }
+
+  /*
+  Define a type Book with properties title and author. 
+  Create a Set called library and add two books to it.
+  */
+
+  exampleLibrary() {
+    type Book = { title: string; author: string };
+    const library: Set<Book> = new Set([
+      { title: 'The Catcher', author: 'dfsd' },
+      { title: 'Harry Potter', author: 'Rolyling' },
+    ]);
+  }
+
+  /*
+    Create a Record type Student with name and grade.
+    Create a Record named studentRecords with three students,
+    where the keys are student IDs (1, 2, 3).
+    */
+  exampleStudent() {
+    type Student = { name: string; grade: number };
+  }
+
+  /*
+   */
+
+  primeNumber() {
+    const evenNumbers = new Set<number>([2, 4, 6, 8]);
+    const primeNumbers = new Set<number>([2, 3, 5, 7]);
+    const commonNumbersArray = Array.from(evenNumbers).filter((num) =>
+      primeNumbers.has(num)
+    );
+
+    // Converting the result back to a Set
+    const commonNumbers = new Set<number>(commonNumbersArray);
+
+    // Output the results
+    console.log('Even Numbers: ', Array.from(evenNumbers));
+    console.log('Prime Numbers: ', Array.from(primeNumbers));
+    console.log(
+      'Common Numbers: ',
+      Array.from(commonNumbers).forEach((item) => console.log(item))
+    );
+  }
 }
